@@ -1,0 +1,28 @@
+# japanese lang dictionary
+ja:
+  # common actions
+  add: 追加
+  show: 表示
+  update: 更新
+  edit: 編集
+  delete: 削除
+  confirm: 確認
+  back: 戻る
+  enable: 有
+  disable: 無
+
+  #
+  # models
+  #
+
+  # post
+  post: ポスト
+  name: 名前
+  body: 内容
+
+
+  #
+  # layouts
+  #
+
+

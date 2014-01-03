@@ -1,0 +1,39 @@
+## dependency files
+#
+front/index.php
+front/testAPI4wsdl.php
+front/ext/lookup.html
+front/ext/tensocom_plugin.html
+front/ext/tensocom_plugin_test.html
+front/js/tensocom_plugin.js
+front/js/tensocom_plugin_test.js
+lib/api_cooperation.inc.php
+lib/class.php
+lib/conf.inc.php
+lib/credit.inc.php
+lib/decideLang.class.php
+lib/scutum_ip.php
+lib/db_connect.ini
+lib/mp/default.inc.php
+lib/paypal_mod/constants.php
+lib/properties/sysadmin.inc.php
+smarty/templates/admin/jp/default/new_baggage_edit_done.html
+
+
+## develop on php
+#
+# smarty
+smarty/templates_c/*
+!smarty/templates_c/.gitkeep
+
+# application log
+log
+!log/.gitkeep
+
+## develop
+#
+# ruby gems
+vendor/bundle
+
+# sass
+.sass-cache

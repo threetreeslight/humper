@@ -1,0 +1,3 @@
+- $test = 'test'
+%p= "#{$test} adjkd a #{call_user_func(function($test) { return str_repeat($test, 10); }, $test)}"
+= "#{$test} adjkd a #{call_user_func(function($test) { return str_repeat($test, 10); }, $test)}"

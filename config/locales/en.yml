@@ -1,0 +1,26 @@
+# english lang dictionary
+en:
+  # common actions
+  add: add
+  show: show
+  update: update
+  edit: edit
+  delete: delete
+  confirm: confirm
+  back: Back
+  enable: Enable
+  disable: Disable
+
+  #
+  # models
+  #
+
+  # post
+  post: post
+  name: name
+  body: body
+
+  #
+  # layouts
+  #
+
