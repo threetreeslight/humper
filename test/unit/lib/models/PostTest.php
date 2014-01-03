@@ -3,9 +3,8 @@ require_once '/var/www/test/test_helper.php';
 
 class PostTest extends PHPUnit2_Framework_TestCase {
 
-    private $member_id = "0";
-    private $post     = "1000000";
-    private $alread_post_num;
+    private $name = "foo";
+    private $body = "bar";
     private $post_;
 
     /**
@@ -25,8 +24,8 @@ class PostTest extends PHPUnit2_Framework_TestCase {
         $this->alread_post_num = count(Post::findAll());
 
         $this->post_ = new Post();
-        $this->post_->member_id = $this->member_id;
-        $this->post_->post     = $this->post;
+        $this->post_->name = $this->name;
+        $this->post_->body = $this->body;
         $this->post_->save();
     }
 
@@ -49,7 +48,7 @@ class PostTest extends PHPUnit2_Framework_TestCase {
         // record create by setUp()
         $this->assertEquals(
             $this->post_->id,
-            Post::findBy(array(':member_id' => $this->member_id))->post
+            Post::findBy(array(':name' => $this->name))->id
         );
     }
 
@@ -86,30 +85,19 @@ class PostTest extends PHPUnit2_Framework_TestCase {
     // ::findBy
     public function testFindBy() {
         $this->assertEquals(
-            $this->member_id,
-            Post::findBy(array(':member_id' => $this->member_id))->member_id
+            $this->name,
+            Post::findBy(array(':name' => $this->name))->name
         );
     }
 
     // save() method
     public function testUpdate() {
-        $update_post = '20000';
+        $update_post = 'bar2';
 
-        $this->post_->post = $update_post;
+        $this->post_->body = $update_post;
         $this->post_->save();
 
-        $this->assertEquals($update_post, Post::find($this->post_->id)->post);
-    }
-
-    // ::isUniqueMemberId positive test
-    public function testIsUniqueMemberIdPositive() {
-        $result = Post::isUniqueMemberId('999999999');
-        $this->assertEquals(true, $result);
-    }
-    // ::isUniqueMemberId negative test
-    public function testIsUniqueMemberIdNegative() {
-        $result = Post::isUniqueMemberId($this->member_id);
-        $this->assertEquals(false, $result);
+        $this->assertEquals($update_post, Post::find($this->post_->id)->body);
     }
 
     // destroy()
