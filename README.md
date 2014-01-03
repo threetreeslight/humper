@@ -12,6 +12,10 @@ we support
 * helper
 * Pure PHP Template engine
 
+require
+
+* php > 5.1
+* ruby > 1.9 ( for sass, coffeescript)
 
 ## contents
 
