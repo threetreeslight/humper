@@ -74,10 +74,25 @@ class HumperI18nComponent {
      * @return mixed
      */
     public function t($key) {
-        if (!isset($this->dict_data) || !isset($this->dict_data[$this->getLanguage()][$key])) {
+        if (!isset($this->dict_data)) {
             return (string)$key;
         }
-        return $this->dict_data[$this->getLanguage()][$key];
+
+        $keys = explode('.', $key);
+        $dict = $this->dict_data[$this->getLanguage()];
+
+        foreach($keys as $section) {
+            if (isset($dict[$section])) {
+                $dict = $dict[$section];
+            } else {
+                return (string)$key;
+            }
+        }
+        if (is_string($dict)) {
+            return (string)$dict;
+        } else {
+            return (string)$key;
+        }
     }
 
     /**

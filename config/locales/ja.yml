@@ -15,11 +15,11 @@ ja:
   # models
   #
 
-  # post
-  post: ポスト
-  name: 名前
-  body: 内容
-
+  models:
+    post: ポスト
+    posts:
+      name: 名前
+      body: 内容
 
   #
   # layouts
