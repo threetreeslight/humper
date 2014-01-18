@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 group :development do
+  gem 'php-server', '0.0.7'
+
   # assets
   gem 'sass'
   gem 'compass'

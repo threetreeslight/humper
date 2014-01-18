@@ -5,7 +5,7 @@
  * set layout use variables.
  **/
 ?>
-<?php $this->setLayoutVar(array('title' => $this->t('post') )) ?>
+<?php $this->setLayoutVar(array('title' => $this->t('models.post') )) ?>
 
 <h1>posts</h1>
 
@@ -20,8 +20,8 @@
          * translation function. need deictionary 'config/lang_name.yml'.
          **/
         ?>
-        <th><?= $this->t('name') ?></th>
-        <th><?= $this->t('body') ?></th>
+        <th><?= $this->t('models.posts.name') ?></th>
+        <th><?= $this->t('models.posts.body') ?></th>
         <th></th>
         <th></th>
         <th></th>

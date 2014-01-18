@@ -15,10 +15,11 @@ en:
   # models
   #
 
-  # post
-  post: post
-  name: name
-  body: body
+  models:
+    post: Post
+    posts:
+      name: Name
+      body: Body
 
   #
   # layouts
