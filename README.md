@@ -454,8 +454,11 @@ create disctionay file `config/locale/ja.yml`
 
 ```php
 ja:
-  name: タイトル
-  body: 本文
+  models:
+    post: ポスト
+    posts:
+      name: 名前
+      body: 内容
   add: 追加
   show: 表示
   update: 更新
@@ -533,7 +536,7 @@ default layout is views/layouts/layout.php
 views/posts/index.php
 
 ```php
-<?php $this->setLayoutVar(array('title', $this->t('post'))) ?>
+<?php $this->setLayoutVar(array('title', $this->t('models.post'))) ?>
 
 <h1>posts</h1>
 
@@ -541,8 +544,8 @@ views/posts/index.php
     <tr>
         <th>id</th>
         <th><?= $this->t('id') ?></th>
-        <th><?= $this->t('name') ?></th>
-        <th><?= $this->t('body') ?></th>
+        <th><?= $this->t('models.posts.name') ?></th>
+        <th><?= $this->t('models.posts.body') ?></th>
         <th></th>
         <th></th>
         <th></th>
@@ -573,9 +576,9 @@ views/posts/index.php
 <form action='/posts/<?= $post->id ?>' method='post'>
     <input type='hidden' name='_token' value="<?= $_token ?>">
     <input type='hidden' name='_method' value="put">
-    <?= $this->t('name') ?>:
+    <?= $this->t('models.posts.name') ?>:
     <input type='text' name='name' value="<?= $post->name ?>">
-    <?= $this->t('body') ?>:
+    <?= $this->t('models.posts.body') ?>:
     <input type='text' name='body' value="<?= $post->body ?>">
     <input type='submit' value='<?= $this->t('update') ?> '>
 </form>
